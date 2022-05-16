@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
+  
   def index
     #index部分
     @books = Book.all
@@ -26,6 +27,7 @@ class BooksController < ApplicationController
     @book1 = Book.find(params[:id])
     @book2 = Book.new
     @user = @book1.user
+    @book_comment = BookComment.new
   end
 
   def edit
